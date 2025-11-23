@@ -1,0 +1,25 @@
+name: sofia_air_quality
+version: '1.0.0'        # required
+config-version: 2       # required
+
+profile: sofia_air_quality
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  sofia_air_quality:
+    +schema: raw
+
+models:
+  sofia_air_quality:
+    # Materialize staging models as views, and marts as tables
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
