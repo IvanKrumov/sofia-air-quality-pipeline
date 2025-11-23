@@ -1,0 +1,1 @@
+select * from {{source('sofia_air_quality', 'raw_pm25_unverified')}}
