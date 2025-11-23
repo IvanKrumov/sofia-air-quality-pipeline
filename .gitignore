@@ -36,3 +36,4 @@ Thumbs.db
 
 # Compiled files
 *.log
+dbt_internal_packages/

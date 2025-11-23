@@ -1,23 +1,16 @@
-version: 2
+version: 1
 
-# Try using these source definitions instead!
 sources:
-  - name: ecom
-    schema: "{{ target.schema }}_raw"
-    description: E-commerce data for the Jaffle Shop
+  - name: sofia_air_quality
+    description: A clone of a Postgres database
+    database: sofia-air-quality-2025 # in BigQuery we use the project id instead the database in Snowflake
+    schema: sofia_air_quality_raw
     tables:
-      - name: raw_customers
-        description: One record per person who has purchased one or more items
-      - name: raw_orders
-        description: One record per order (consisting of one or more order items)
-        config:
-          loaded_at_field: ordered_at
-      - name: raw_items
-        description: Items included in an order
-      - name: raw_stores
-        config:
-          loaded_at_field: opened_at
-      - name: raw_products
-        description: One record per SKU for items sold in stores
-      - name: raw_supplies
-        description: One record per supply per SKU of items sold in stores
+      - name: raw_no2
+        description: Raw no2 data
+      - name: raw_pm10
+        description: Raw no2 data
+      - name: raw_pm25_unverified
+        description: Raw no2 data
+      - name: raw_pm25_verified
+        description: Raw no2 data

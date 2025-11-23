@@ -1,2 +1,1 @@
--- select * from sofia_air_quality_raw.raw_no2
-select * from sofia_air_quality_raw.raw_pm25_verified
+select * from {{source('sofia_air_quality', 'raw_no2')}}
